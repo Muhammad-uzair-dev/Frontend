@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharks Tank Pakistan - Where Bright Minds Secure Investments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0A2463;
+            --secondary-blue: #1E40AF;
+            --accent-blue: #3B82F6;
+            --light-blue: #E0F2FE;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --gray-bg: #F9FAFB;
+            --border-color: #E5E7EB;
+            --gradient-primary: linear-gradient(135deg, #0A2463 0%, #1E40AF 100%);
+            --gradient-accent: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(10, 36, 99, 0.95);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(10, 36, 99, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #FFFFFF, #A5B4FC);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: logoGlow 3s infinite alternate;
+        }
+
+        .logo-sub {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            color: #A5B4FC;
+        }
+
+        .logo-icon {
+            font-size: 40px;
+            margin-right: 15px;
+            transform: rotate(90deg);
+            color: #3B82F6;
+            filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.7));
+            animation: sharkFloat 4s infinite ease-in-out;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            top: 0;
+            left: -50%;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #A5B4FC;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 18px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Floating shark animation */
+        .floating-shark {
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.1;
+            z-index: 0;
+            animation: floatAround 20s infinite linear;
+        }
+
+        .shark-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shark-2 {
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+            font-size: 60px;
+        }
+
+        .shark-3 {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+            font-size: 40px;
+        }
+
+        /* Main Content Sections */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-light {
+            background-color: var(--gray-bg);
+        }
+
+        /* Opportunities Section */
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .opportunity-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .opportunity-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+            z-index: 2;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .opportunity-icon {
+            font-size: 60px;
+            color: var(--accent-blue);
+            margin-bottom: 30px;
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            margin: 0 auto 30px;
+            transition: all 0.5s;
+        }
+
+        .opportunity-card:hover .opportunity-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(59, 130, 246, 0.2);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .opportunity-card h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        /* Calculators Section */
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .calculator-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .calculator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .calculator-header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-header:before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .calculator-header h3 {
+            font-size: 26px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .calculator-body {
+            padding: 35px;
+        }
+
+        .calculator-body p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .calculator-btn {
+            background: var(--gradient-accent);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s;
+            width: 100%;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .calculator-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Updates Section */
+        .updates-container {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .update-card {
+            display: flex;
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .update-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .update-img {
+            flex: 0 0 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .update-img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 36, 99, 0.7), rgba(59, 130, 246, 0.5));
+        }
+
+        .update-img i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            color: white;
+            z-index: 2;
+        }
+
+        .update-content {
+            flex: 1;
+            padding: 35px;
+        }
+
+        .update-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .update-tag {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .update-date {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .update-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            line-height: 1.3;
+        }
+
+        .update-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .read-more {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 15px;
+            color: var(--secondary-blue);
+        }
+
+        /* Sharks Section */
+        .sharks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .shark-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .shark-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .shark-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shark-img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(10, 36, 99, 0.9));
+        }
+
+        .shark-img i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            color: white;
+            opacity: 0.3;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+
+        .shark-card:hover .shark-img i {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 0.5;
+        }
+
+        .shark-content {
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .shark-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .shark-role {
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .shark-quote {
+            color: var(--text-light);
+            font-style: italic;
+            position: relative;
+            padding-top: 15px;
+        }
+
+        .shark-quote:before {
+            content: '"';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: var(--accent-blue);
+            font-family: Georgia, serif;
+        }
+
+        /* Taimur Malik Feature */
+        .featured-shark {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 60px auto;
+            max-width: 900px;
+            display: flex;
+            transition: all 0.5s;
+        }
+
+        .featured-shark:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .featured-img {
+            flex: 0 0 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .featured-img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 36, 99, 0.8), transparent);
+        }
+
+        .featured-content {
+            flex: 1;
+            padding: 40px;
+            color: white;
+        }
+
+        .featured-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .featured-content h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .featured-content p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-blue);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links li i {
+            margin-right: 12px;
+            color: var(--accent-blue);
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9CA3AF;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes sharkFloat {
+            0%, 100% {
+                transform: rotate(90deg) translateY(0);
+            }
+            50% {
+                transform: rotate(90deg) translateY(-10px);
+            }
+        }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50px, 50px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1100px) {
+            .featured-shark {
+                flex-direction: column;
+                max-width: 600px;
+            }
+            
+            .featured-img {
+                flex: 0 0 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-subtitle {
+                font-size: 24px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .update-card {
+                flex-direction: column;
+            }
+            
+            .update-img {
+                flex: 0 0 200px;
+            }
+            
+            .floating-shark {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                z-index: 999;
+                animation: fadeInDown 0.5s ease;
+            }
+            
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 22px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .calculators-grid, .opportunities-grid, .sharks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-main {
+                font-size: 26px;
+            }
+            
+            .logo-sub {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+            
+            .logo-icon {
+                font-size: 32px;
+                margin-right: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .featured-content h3 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="scrollToTop()">
+                    <div class="logo-icon">入</div>
+                    <div class="logo-text">
+                        <div class="logo-main">SHARKS PAKISTAN</div>
+                        <div class="logo-sub">SHARKS TANK PAKISTAN</div>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#opportunities">Opportunities</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="#updates">Updates</a></li>
+                        <li><a href="#sharks">Meet The Sharks</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-shark shark-1">入</div>
+        <div class="floating-shark shark-2">入</div>
+        <div class="floating-shark shark-3">入</div>
+        
+        <div class="container">
+            <h1 class="animate-on-scroll">Where Pakistan's Brightest Minds Secure Game-Changing Investments!</h1>
+            <div class="hero-subtitle animate-on-scroll">Welcome To Sharks Tank Pakistan</div>
+            <p class="hero-description animate-on-scroll">
+                The Ultimate Platform Where Bold Entrepreneurs Pitch Their Innovative Ideas To Pakistan's Top Investors.
+                Watch Dreams Come To Life As Passionate Founders Seek Funding To Transform Their Visions Into Successful Ventures.
+                Are You Ready To Dive Into The World Of Groundbreaking Business Ideas?
+            </p>
+            <div class="hero-btns">
+                <a href="#opportunities" class="btn btn-primary animate-on-scroll">Discover Opportunities</a>
+                <a href="#sharks" class="btn btn-secondary animate-on-scroll">Meet The Sharks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section id="opportunities">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Discover Limitless Opportunities</h2>
+            </div>
+            <div class="opportunities-grid">
+                <div class="opportunity-card animate-on-scroll">
+                    <div class="opportunity-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Entrepreneurial Journey</h3>
+                    <p>Unleash your potential with exclusive resources and guidance to elevate your skills and achieve your goals. Join us on a journey to explore new horizons.</p>
+                </div>
+                <div class="opportunity-card animate-on-scroll">
+                    <div class="opportunity-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Ideas Shaping</h3>
+                    <p>Transform your innovative concepts into viable business models with mentorship from Pakistan's top investors and industry leaders.</p>
+                </div>
+                <div class="opportunity-card animate-on-scroll">
+                    <div class="opportunity-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Networking & Community</h3>
+                    <p>Connect with like-minded entrepreneurs, investors, and mentors who can help you navigate the challenges of building a successful venture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section class="section-light" id="calculators">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Powerful Business Tools</h2>
+            </div>
+            <div class="calculators-grid">
+                <div class="calculator-card animate-on-scroll">
+                    <div class="calculator-header">
+                        <h3>Equity Loan Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <p>Ready to fund your business ideas and take your venture to the next level? Use our Equity Loan Calculator today to unlock the funding potential your business needs to grow, innovate, and succeed.</p>
+                        <button class="calculator-btn" id="equity-calc-btn">Try the Equity Loan Calculator Now!</button>
+                    </div>
+                </div>
+                <div class="calculator-card animate-on-scroll">
+                    <div class="calculator-header">
+                        <h3>Business Valuation Calculator</h3>
+                    </div>
+                    <div class="calculator-body">
+                        <p>Discover Your Business's True Worth! Ready to Fuel Your Business Growth? Unlock the funding opportunities your business deserves and take your venture to the next level.</p>
+                        <button class="calculator-btn" id="valuation-calc-btn">Start Valuation Calculator</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section id="updates">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Catch The Latest Updates</h2>
+            </div>
+            <div class="updates-container">
+                <div class="update-card animate-on-scroll">
+                    <div class="update-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="update-content">
+                        <div class="update-meta">
+                            <span class="update-tag">PREMIUM TOOL</span>
+                            <span class="update-date">2025 Guide</span>
+                        </div>
+                        <h3>Startup Dilution Calculator: How Much Equity Should You Give Away?</h3>
+                        <p>CAP TABLE SIMULATION Startup Dilution Calculator Model your funding round to understand equity distribution and make informed decisions.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="update-card animate-on-scroll">
+                    <div class="update-img" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="update-content">
+                        <div class="update-meta">
+                            <span class="update-tag">INVESTMENT GUIDE</span>
+                            <span class="update-date">Best Guide 2025</span>
+                        </div>
+                        <h3>Investment Funds for Developing Countries</h3>
+                        <p>Investment funds for developing countries are pooled capital vehicles that invest in projects, companies, and infrastructure to drive economic growth.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="update-card animate-on-scroll">
+                    <div class="update-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="update-content">
+                        <div class="update-meta">
+                            <span class="update-tag">BUSINESS EFFICIENCY</span>
+                            <span class="update-date">12 Proven Methods</span>
+                        </div>
+                        <h3>Streamline Small Business Operations for Greater Efficiency</h3>
+                        <p>Running a small business is no easy task — every hour, tool, and decision matters. Discover 12 proven methods to optimize your operations.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Taimur Malik Feature -->
+    <section class="section-light">
+        <div class="container">
+            <div class="featured-shark animate-on-scroll">
+                <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="featured-content">
+                    <span class="featured-tag">THE BARRISTER BRIDGING LAW AND INNOVATION</span>
+                    <h3>Taimur Malik: The Visionary Barrister</h3>
+                    <p>Revolutionizing Legal Access in Pakistan. In the dynamic world of Pakistani entrepreneurship and legal innovation, few names resonate as powerfully as Taimur Malik. As a barrister and investor, he's bridging the gap between legal frameworks and startup innovation.</p>
+                    <a href="#" class="read-more" style="color: white;">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sharks Section -->
+    <section id="sharks">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Meet The Sharks — Pakistan's Top Business Leaders</h2>
+            </div>
+            <div class="sharks-grid">
+                <div class="shark-card animate-on-scroll">
+                    <div class="shark-img" style="background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="shark-content">
+                        <h3>Rabab Hashim</h3>
+                        <div class="shark-role">Host of Shark Tank Pakistan 2024</div>
+                        <p class="shark-quote">Engaging and enterprising, Rabab Hashim makes her mark on Shark Tank Pakistan as the dynamic host guiding entrepreneurs and investors.</p>
+                    </div>
+                </div>
+                <div class="shark-card animate-on-scroll">
+                    <div class="shark-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="shark-content">
+                        <h3>Rabeel Warraich</h3>
+                        <div class="shark-role">Powerhouse Investor</div>
+                        <p class="shark-quote">Rabeel Warraich is a shining star in the world of entrepreneurship. He is the top investor with a keen eye for promising ventures.</p>
+                    </div>
+                </div>
+                <div class="shark-card animate-on-scroll">
+                    <div class="shark-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="shark-content">
+                        <h3>Romanna Dada</h3>
+                        <div class="shark-role">Ambitious Shark</div>
+                        <p class="shark-quote">Romanna Dada is a name that resonates with ambition, resilience, and a fierce passion for transforming innovative ideas into successful businesses.</p>
+                    </div>
+                </div>
+                <div class="shark-card animate-on-scroll">
+                    <div class="shark-img" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="shark-content">
+                        <h3>Faisal Aftab</h3>
+                        <div class="shark-role">Bold Visionary</div>
+                        <p class="shark-quote">Faisal Aftab wants to use the fund to supercharge Pakistani ventures. Faisal doesn't step into investments lightly, seeking truly transformative ideas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column animate-on-scroll">
+                    <h3>Sharks Tank Pakistan</h3>
+                    <p>Where Pakistan's brightest minds secure game-changing investments. Join us in transforming innovative ideas into successful ventures.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column animate-on-scroll">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i> <a href="#home">Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#opportunities">Opportunities</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#calculators">Calculators</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#updates">Latest Updates</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#sharks">Meet The Sharks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animate-on-scroll">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Startup Dilution Calculator</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Valuation Calculator</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Investment Guides</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Business Efficiency Tips</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Entrepreneur Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animate-on-scroll">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</li>
+                        <li><i class="fas fa-envelope"></i> info@sharkstankpakistan.pk</li>
+                        <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright animate-on-scroll">
+                <p>&copy; 2025 Sharks Tank Pakistan. All rights reserved. | Designed for Pakistani Entrepreneurs</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Calculator button interactions
+        document.getElementById('equity-calc-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Calculator...';
+            setTimeout(() => {
+                this.innerHTML = 'Try the Equity Loan Calculator Now!';
+                alert('Equity Loan Calculator opened! This is a demo version.');
+            }, 800);
+        });
+        
+        document.getElementById('valuation-calc-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Calculating...';
+            setTimeout(() => {
+                this.innerHTML = 'Start Valuation Calculator';
+                alert('Business Valuation Calculator opened! This is a demo version.');
+            }, 800);
+        });
+        
+        // Scroll animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Add some interactive effects to cards
+        document.querySelectorAll('.opportunity-card, .calculator-card, .update-card, .shark-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+        
+        // Initialize with header scrolled if page is not at top
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
+    </script>
+</body>
+</html>
